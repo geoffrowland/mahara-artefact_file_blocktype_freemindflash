@@ -15,7 +15,7 @@ It uses the FreeMind Flash browser including SWFobject to render the FreeMind fi
 http://freemind.sourceforge.net/wiki/index.php/Flash_browser
 http://code.google.com/p/swfobject/
 
-We also have (largely) working code rendering the mind maps using the FreeMind Java applet. If there is any interest, we can make available. However, in our hands this perfomed more sluggishly than Flash and also had some issues with applet security and Mahara view permissions.
+We also have (largely) working code rendering the mind maps using the FreeMind Java applet rather than Flash. If there is any interest, we can make available. However, in our hands this performed rather more sluggishly than Flash and also had some issues with applet security and Mahara view permissions.
 
 Installation
 
