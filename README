@@ -1,0 +1,73 @@
+Mahara FreeMind mind map plugin
+
+This is an artefact file blocktype to allow Flash rendering of interactive FreeMind mind maps in Mahara Views.
+
+http://freemind.sourceforge.net
+
+It draws inspiration from the FreeMind filter for Moodle. 
+
+http://docs.moodle.org/en/FreeMind_filter
+
+Development of this Mahara version was begun by a student, James Kerrigan, on the Foundation degree in Computing and Internet Technology at the University Centre Yeovil. 
+
+It uses the FreeMind Flash browser including SWFobject to render the FreeMind files (i.e a combination of javaScript and flash)
+
+http://freemind.sourceforge.net/wiki/index.php/Flash_browser
+http://code.google.com/p/swfobject/
+
+We also have (largely) working code rendering the mind maps using the FreeMind Java applet rather than Flash. If there is any interest, we can make this available too. However, in our hands this performed rather more sluggishly than Flash and also had some issues with applet security and Mahara view permissions.
+
+Installation
+
+The code may be downloaded from Github
+
+https://github.com/geoffrowland/mahara-artefact_file_blocktype_freemindflash
+
+After unpacking the download bundle, installation essentially involves copying the /freemindflash folder (and contents) intto the /artefacts/file/blocktype folder of your Mahara installation to give /artefacts/file/blocktype/freemidflash
+
+However, a few additional edits of Mahara core files are required for appropriate handling of FreeMind .mm files.
+
+To /artefacts/file/filetypes.xml
+
+add (e.g. just before  <!-- General types -->)
+
+    <!-- FreeMind mind maps -->
+    <filetype>
+        <description>mm</description>
+        <mimetypes>
+            <mimetype>application/x-freemind</mimetype>
+        </mimetypes>
+    </filetype>
+
+Then increment the $config->version number in /artefacts/file/version.php and visit the Site Administration page to 'force' the update the artefact_file_mime_types table
+
+Finally, in /artefacts/file/lib.php 
+
+Immediately after
+
+         if ($um->file['type'] == 'application/octet-stream') {
+            // the browser wasn't sure, so use file_mime_type to guess
+            require_once('file.php');
+            $data->filetype = file_mime_type($um->file['tmp_name']);
+        }
+        else {
+            $data->filetype = $um->file['type'];
+        }
+Add
+         // The browser may have been wrong, so use file extension to force some mime-types.////
+        require_once('file.php'); 
+        switch ($um->original_filename_extension()) {
+            case 'mm': $data->filetype = 'application/x-freemind';
+            break;
+        }
+
+Note that the switch statement can be easily extended to force other mime-types (for other plugins) that are not reliably identified on upload by browsers. 
+
+
+Use
+
+When editing the contents of a View, drag the FreeMindFlash icon from the Files,images and video tab into your view. Then select/upload the .mm file of your choice. You can also set the width and height, though these default to 450 px x 300 px if you don't.
+
+Enjoy
+
+Geoff
