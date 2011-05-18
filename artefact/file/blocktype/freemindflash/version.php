@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @package    mahara
- * @subpackage artefact-cpds
+ * @subpackage artefact-freemindflash
  * @author     James Kerrigan
  * @author     Geoffrey Rowland 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
@@ -27,7 +27,7 @@
  * Includes code from the FreeMind Flash Browser visorFreemind.swf 1.0b
  * http://freemind.sourceforge.net/wiki/index.php/Flash_browser (GNU GPL licence)
  *
- * and expressInstall.swf and swfobject.js from SWFObject 2.2
+ * Also expressInstall.swf and swfobject.js from SWFObject 2.2
  * http://code.google.com/p/swfobject/ (MIT licence)
  *
  */

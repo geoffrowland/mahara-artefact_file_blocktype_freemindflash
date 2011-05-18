@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @package    mahara
- * @subpackage artefact-cpds
+ * @subpackage artefact-freemindflash
  * @author     James Kerrigan
  * @author     Geoffrey Rowland 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
