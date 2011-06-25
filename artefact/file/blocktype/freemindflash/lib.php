@@ -18,17 +18,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @package    mahara
- * @subpackage artefact-freemindflash
- * @author     James Kerrigan
- * @author     Geoffrey Rowland 
+ * @subpackage blocktype-freemindflash
+ * @author     Catalyst IT Ltd
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
- * @copyright  (C) 2011 James Kerrigan and Geoffrey Rowland geoff.rowland@yeovil.ac.uk
- *
- * Includes code from the FreeMind Flash Browser visorFreemind.swf 1.0b
- * http://freemind.sourceforge.net/wiki/index.php/Flash_browser (GNU GPL licence)
- *
- * and expressInstall.swf and swfobject.js from SWFObject 2.2
- * http://code.google.com/p/swfobject/ (MIT licence)
+ * @copyright  (C) 2006-2009 Catalyst IT Ltd http://catalyst.net.nz
  *
  */
 
