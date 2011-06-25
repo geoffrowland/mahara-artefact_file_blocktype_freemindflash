@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @package    mahara
+ * @package mahara
  * @subpackage blocktype-freemindflash
- * @author     Catalyst IT Ltd
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
- * @copyright  (C) 2006-2009 Catalyst IT Ltd http://catalyst.net.nz
- *
+ * @author James Kerrigan
+ * @author Geoffrey Rowland
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL
+ * @copyright (C) 2011 James Kerrigan and Geoffrey Rowland geoff.rowland@yeovil.ac.uk
  */
 
 defined('INTERNAL') || die();
