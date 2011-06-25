@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @package    mahara
- * @subpackage artefact-cpds
+ * @subpackage blocktype-freemindflash
  * @author     James Kerrigan
  * @author     Geoffrey Rowland 
  * @author     Dominique-Alain JAN <djan@mac.com>
