@@ -22,7 +22,7 @@
  * @author James Kerrigan
  * @author Geoffrey Rowland
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL
- * @copyright (C) 2011 James Kerrigan and Geoffrey Rowland geoff.rowland@yeovil.ac.uk*
+ * @copyright (C) 2011 James Kerrigan and Geoffrey Rowland geoff.rowland@yeovil.ac.uk
  */
 
 defined('INTERNAL') || die();
