@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @package    mahara
- * @subpackage artefact-freemindflash
+ * @subpackage blocktype-freemindflash
  * @author     James Kerrigan
  * @author     Geoffrey Rowland 
  * @translator     Gregor Anzelj, gregor.anzelj@gmail.com
