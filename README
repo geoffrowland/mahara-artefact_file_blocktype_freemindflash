@@ -10,10 +10,13 @@ http://docs.moodle.org/en/FreeMind_filter
 
 Development of this Mahara version was begun by a student, James Kerrigan, on the Foundation degree in Computing and Internet Technology at the University Centre Yeovil. 
 
-It uses the FreeMind Flash browser including SWFobject to render the FreeMind files (i.e a combination of javaScript and flash)
+It originally used the FreeMind Flash browser including SWFobject to render the FreeMind files (i.e a combination of JavaScript and Flash)
 
 http://freemind.sourceforge.net/wiki/index.php/Flash_browser
 http://code.google.com/p/swfobject/
+
+However, to fix display issues in some browsers, it now uses the Freeplane Flash browser including FlashObject
+http://freeplane.sourceforge.net/
 
 We also have (largely) working code rendering the mind maps using the FreeMind Java applet rather than Flash. If there is any interest, we can make this available too. However, in our hands this performed rather more sluggishly than Flash and also had some issues with applet security and Mahara view permissions.
 
