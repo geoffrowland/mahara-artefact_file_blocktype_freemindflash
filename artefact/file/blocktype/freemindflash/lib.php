@@ -59,39 +59,33 @@ class PluginBlocktypeFreeMindFlash extends PluginBlocktype {
             $base = get_config('wwwroot') . 'artefact/file/download.php?file='. $artefact->get('id') . '&view=' . $instance->get('view').'/';
             $width  = (!empty($configdata['width'])) ? hsc($configdata['width']) : '450';
             $height  = (!empty($configdata['height'])) ? hsc($configdata['height']) : '300';
-            $result .= '<script type="text/javascript" src="'.get_config('wwwroot').'artefact/file/blocktype/freemindflash/flash/swfobject.js"></script>'; 
+            $node  = (!empty($configdata['node'])) ? hsc($configdata['node']) : '-1';
+            $result .= '<script type="text/javascript" src="'.get_config('wwwroot').'artefact/file/blocktype/freemindflash/flash/flashobject.js"></script>'; 
             $result .= '<div class="freemindflash-container center">';
   	         $result .= '<a href="' . $url . '">' . hsc($artefact->get('title')) . '</a><br>';
-  	         $result .= '<script type="text/javascript">';
- 	         $result .= 'var flashvars = {';
- 	         $result .= 'CSSFile:"'.get_config('wwwroot').'artefact/file/blocktype/freemindflash/flash/flashfreemind.css",';
- 	         $result .= 'justMap:"false",';
- 	         $result .= 'initLoadFile:"'.$url.'",';
- 	         $result .= 'baseImagePath:"'.$base.'",';
- 	         $result .= 'openUrl:"_blank",';
- 	         $result .= 'startCollapsedToLevel:"3",';
- 	         $result .= 'maxNodeWidth:"200",';
- 	         $result .= 'mainNodeShape:"elipse",';
- 	         $result .= 'defaultToolTipWordWrap:"200",';
- 	         $result .= 'offsetX:"left",';
- 	         $result .= 'offsetY:"top",';
- 	         $result .= 'buttonsPos:"top",';
- 	         $result .= 'min_alpha_buttons:"20",';
- 	         $result .= 'max_alpha_buttons:"100",';
- 	         $result .= 'scaleTooltips:"false"';
- 	         $result .= '};';
- 	         $result .= 'var params = {';
- 	         $result .= 'bgcolor:"#FFFFFF",';
- 	         $result .= 'quality:"high"';
- 	         $result .= '};';
-            $result .= 'swfobject.embedSWF("'.get_config('wwwroot').'artefact/file/blocktype/freemindflash/flash/visorFreemind.swf", "flashcontent'.$id.'", "'.$width.'", "'.$height.'", "9.0.0", "'.get_config('wwwroot').'artefact/file/blocktype/fremindflash/flash/expressInstall.swf", flashvars, params);';
-            $result .= '</script>';
   	         $result .= '<div id="flashcontent'.$id.'">';
   	         $result .= 'No Flash';
   	         $result .= '</div>';
+  	         $result .= '<script type="text/javascript">';
+	      	$result .= 'var fo = new FlashObject("'.get_config('wwwroot').'artefact/file/blocktype/freemindflash/flash/visorFreeplane.swf", "visorFreeplane", "'.$width.'", "'.$height.'", 8);';
+            // All these variables can be added in the script.
+            // None of them are needed, they all have default values.
+	         $result .= 'fo.addParam("quality", "high");';
+	         // If we want to initiate the mindmap with all the nodes collapsed from this level
+	         // default = "-1" that means, do nothing
+	      	$result .= 'fo.addVariable("startCollapsedToLevel","'.$node.'");';
+            // Map background color
+            // default=last chosen by user or white	         
+	         $result .= 'fo.addVariable("bgcolor", 0xffffff);';
+            // Initial mindmap to load
+      		$result .= 'fo.addVariable("initLoadFile", "'.$url.'");';
+            // Where to open a link: 
+            // default="_self"
+	      	$result .= 'fo.addVariable("openUrl", "_blank");';
+	      	$result .= 'fo.write("flashcontent'.$id.'");';
+            $result .= '</script>';
   	         $result .= '</div>';	        
         return $result;
-        
     }
     
     public static function has_instance_config() {
@@ -107,17 +101,24 @@ class PluginBlocktypeFreeMindFlash extends PluginBlocktype {
             'width' => array(
                 'type' => 'text',
                 'title' => get_string('width', 'blocktype.file/freemindflash'),
-                'size' => 3,
+                'size' => 4,
                 'description' => get_string('widthdescription', 'blocktype.file/freemindflash'),
                 'defaultvalue' => (isset($configdata['width'])) ? $configdata['width'] : '',
             ),
            'height' => array(
                 'type' => 'text',
                 'title' => get_string('height', 'blocktype.file/freemindflash'),
-                'size' => 3,
+                'size' => 4,
                 'description' => get_string('heightdescription', 'blocktype.file/freemindflash'),
                 'defaultvalue' => (isset($configdata['height'])) ? $configdata['height'] : '',
             ),
+           'node' => array(
+                'type' => 'text',
+                'title' => get_string('node', 'blocktype.file/freemindflash'),
+                'size' => 2,
+                'description' => get_string('nodedescription', 'blocktype.file/freemindflash'),
+                'defaultvalue' => (isset($configdata['node'])) ? $configdata['node'] : '',
+            ),            
         );
     }
 

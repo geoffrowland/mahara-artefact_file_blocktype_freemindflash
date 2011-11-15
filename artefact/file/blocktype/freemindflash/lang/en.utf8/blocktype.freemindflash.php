@@ -33,6 +33,8 @@ $string['description'] = 'A mind map (mm) file from your Files area';
 $string['showdescription'] = 'Show Description?';
 $string['width'] = 'Width';
 $string['height'] = 'Height';
-$string['widthdescription'] = 'Specify the width for your applet (in pixels). Leave it blank to use the default width of 450 px.';
-$string['heightdescription'] = 'Specify the height for your applet (in pixels). Leave it blank to use the default height of 300 px.';
+$string['node'] = 'Nodes';
+$string['widthdescription'] = 'Specify the width (in pixels) of your mind map. Leave blank to use the default width of 450 px.';
+$string['heightdescription'] = 'Specify the height (in pixels) of your mind map. Leave blank to use the default height of 300 px.';
+$string['nodedescription'] = 'Specify the level of unfolded nodes initially displayed. Leave blank to use the default, fully unfolded mind map.';
 ?>
